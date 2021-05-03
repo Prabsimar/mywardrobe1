@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+     {% if messages %}
+    <div class="alert alert-danger" role="alert">
+              {% for message in messages %}
+                  {{ message }}
+              {% endfor %}
+      </div>
+      {% endif %}
+
+    <h2>ENTER YOUR ORDER ID</h2>
+     <p>
+    <!-- STEPS TO ENTER details -: <br><br> -->
+<!-- * Enter your first name.<br>
+* Enter your last name.<br> -->
+* Enter your ORDER ID which is sent on all mail.<br>
+* If not receive kindly contact customer care.<br><br>
+
+<!-- * अपना पहला नाम दर्ज करें। <br>
+* अपना अंतिम नाम दर्ज करें।<br> -->
+* अपनी ORDER ID डालें जो सभी मेल पर भेजी जाती है। <br>
+* यदि नहीं तो कृपया ग्राहक सेवा से संपर्क करें। <br>
+    </p>
+
+<form method="post">
+  {{form.as_p}}
+  {% csrf_token %}
+  <button type="submit" class="btn btn-primary">Submit</button>
+ </form>
+
+  </body>
+</html>
+{% endblock content %}

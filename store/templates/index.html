@@ -1,0 +1,237 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+
+   #subscribe{
+           background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+           url("{% static 'images/backkk.PNG' %}");
+           background-attachment: fixed;
+           background-position: center;
+           background-repeat: no-repeat;
+           background-size: cover;
+       }
+       .carousel-image-1{
+             background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4));
+             background-image: url( "{% static 'images/A2.PNG' %}");
+             background-size: cover;
+         }
+       .carousel-image-2{
+             background:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4));
+             background-image: url( "{% static 'images/A4.JPG' %}");
+             background-size: cover;
+         }
+       .carousel-image-3{
+             background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.4));
+             background-image: url( "{% static 'images/A1.JPG' %}");
+             background-size: cover;
+         }
+
+
+</style>
+
+ {% if messages %}
+<div class="alert alert-success" role="alert">
+                    {% for message in messages %}
+                        {{ message }}
+                    {% endfor %}
+  </div>
+ {% endif %}
+
+   <section id="main">
+          <div id="Carousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#Carousel" data-slide-to="0" class="active"></li>
+              <li data-target="#Carousel" data-slide-to="1"></li>
+              <li data-target="#Carousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item carousel-image-1 active">
+                <div class="container">
+                  <div class="carousel-caption text-left mb-15">
+                    <!-- d-none d-sm-block -->
+                    <!-- <h1 class="display-3 h-color">Heading One</h1> -->
+                    <p class="lead"></p>
+                    <a href="{% url 'store' %}" class="btn btn-color slide-btn btn-lg">AVAIL IT</a>
+                  </div>
+                </div>
+              </div>
+
+                <div class="carousel-item carousel-image-2">
+                  <div class="container">
+                    <div class="carousel-caption text-left mb-15">
+                     <!-- d-none d-sm-block -->
+                    <!-- <h1 class="display-3 h-color">Heading Two</h1> -->
+                    <p class="lead"></p>
+                    <a href="{% url 'register' %}" class="btn btn-color slide-btn btn-lg">Sign Up Now</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-item carousel-image-3">
+                <div class="container">
+                  <div class="carousel-caption text-right mb-5">
+                    <!-- d-none d-sm-block -->
+                    <!-- <h1 class="display-3 h-color">Heading Three</h1> -->
+                    <p class="lead">.</p>
+                    <a href="{% url 'store' %}" class="btn btn-color slide-btn btn-lg">GRAB IT</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <a href="#Carousel" data-slide="prev" class="carousel-control-prev">
+              <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a href="#Carousel" data-slide="next" class="carousel-control-next">
+              <span class="carousel-control-next-icon"></span>
+            </a>
+
+          </div>
+        </section>
+
+<!-- ---- ----- -->
+<section class="seller py-5">
+<div class="container">
+<!--Section title-->
+<div class="row mb-5">
+ <div class="col d-flex flex-wrap text-uppercase justify-content-center">
+   <h1 class="font-weight-bold align-self-center mx-1 h-color">
+     Today's Deals
+   </h1>
+ </div>
+</div>
+<!---End of Title-->
+<div class="row">
+<div class="col-sm-6 ">
+   <div class="seller-item">
+     <img src="{% static 'images/2.PNG' %}" alt="" class="img-fluid photo">
+     <p>AT 50% OFF</p>
+    </div>
+ </div>
+ <!--End of first column-->
+ <div class="col-sm-6 d-flex flex-column justify-content-between">
+   <div class="row">
+     <!--first item-->
+     <div class="col-sm-6">
+       <div class="seller-item">
+         <img src="{% static 'images/b12.PNG' %}" alt="" class="img-fluid seller-img
+          img-top">
+         <p>SOLD OUT</p>
+       </div>
+     </div>
+
+     <div class="col-sm-6">
+      <div class="seller-item">
+        <a href="{% url 'store' %}">
+        <img src="{% static 'images/b2.PNG' %}" alt="" class="img-fluid seller-img
+        img-top">
+        </a>
+        <p>1 PIECE LEFT</p>
+      </div>
+    </div>
+     <!--End of 1st item-->
+   </div>
+ </div>
+</div>
+</div>
+</section>
+
+<!-- ---- ---- -->
+<section class="services py-5 text-center">
+    <div class="container">
+        <div class="row">
+            <!--Single Service-->
+            <div class="col-10 mx-auto col-md-6 col-lg-4 my-3">
+                <span class="service-icon">
+                    <i class="fas fa-globe fa-2x"></i>
+                </span>
+       <h5 class="font-weight-bold text-uppercase">Worldwide Shipping</h5>
+       <p class="text-capitalize"> Worldwide Shipping available in across the world!</p>
+            </div>
+            <!--end of Service=-->
+            <!--Single Service-->
+            <div class="col-10 mx-auto col-md-6 col-lg-4 my-3">
+              <span class="service-icon">
+                  <i class="fas fa-stamp fa-2x"></i>
+              </span>
+     <h5 class="font-weight-bold text-uppercase">Certified by IFB</h5>
+     <p class="text-capitalize">Certified by ifb on 1984 for showing estimeed performance.!</p>
+          </div>
+          <!--end of Service=-->
+          <!--Single Service-->
+          <div class="col-10 mx-auto col-md-6 col-lg-4 my-3">
+              <span class="service-icon">
+                  <i class="fas fa-file-invoice-dollar fa-2x"></i>
+              </span>
+     <h5 class="font-weight-bold text-uppercase">10 Days Money Back</h5>
+     <p class="text-capitalize">Money Back on initial 10 days of purchase if you don't like it.</p>
+          </div>
+          <!--end of Service=-->
+        </div>
+    </div>
+</section>
+<!-- ---- ---- -->
+
+     <!--- Filler Section-->
+     <section id="subscribe" class="py-5">
+         <div class="container">
+             <div class="row align-items-center my-5">
+                 <div class="col-sm-10 mx-auto-text-center mb-5">
+                     <h4 class="display-3 mb-5 text-uppercase text-white text-center">
+                         Subscribe For More Offers
+                     </h4>
+                     <form class="form-inline d-flex justify-content-center">
+                         <input type="text" class="form-control w-35" placeholder="Email">
+                         <button class="btn form-btn m-1">Subscribe</button>
+                     </form>
+                 </div>
+             </div>
+         </div>
+     </section>
+<!-- ---- ---- -->
+<section id="about-sec">
+<div class="container">
+<div class="row align-items-center">
+  <div class="col-lg-5 text-center">
+    <img src="{% static 'images/b14.PNG' %}" width="400" height="150"
+    class="img-fluid watch-img">
+  </div>
+  <div class="col-lg-7 text-lg-right  text-center about-text">
+    <h1>About Company</h1>
+    <p class="text">My WARDROBE
+       Established in 1979 is an Indian e-commerce company headquartered in Bangalore, Karnataka, India and registered in Singapore. The company focuses on customer satisfaction.
+  </p>
+  </div>
+</div>
+</div>
+</section>
+<!-- ---- ---- -->
+<a class="floating-btn">
+<input id="toggle-heart" type="checkbox"/>
+<label for="toggle-heart" aria-label="like">❤</label>
+</a>
+<!-- ---- ---- -->
+
+<footer class="footer mt-5">
+	 							 <div class="text-center py-5">
+	 									 <h2 class="py-3 h-color">Welcome to My WARDROBE</h2>
+	 									<div class="mx-auto heading-line"></div>
+	 								</div>
+	 							 <div class="container">
+	 									 <div class="row mb-3">
+	 											 <div class="col-lg-8 offset-lg-2 text-center">
+	 													 <p>Fashions fade, style is eternal</p>
+	 													 <div class="justify-content-center">
+	 														<a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+	 														 <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+	 														 <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+	 													</div>
+	 											</div>
+	 									 </div>
+										 </div>
+										 <br>
+									 </footer>
+
+{% endblock content %}
